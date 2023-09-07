@@ -1,5 +1,6 @@
 package edu.escuelaing;
 
+import java.lang.reflect.InvocationTargetException;
 import java.net.*;
 import java.io.*;
 import javax.imageio.ImageIO;
@@ -20,7 +21,7 @@ public class HttpServer {
 
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(35000);
@@ -67,11 +68,20 @@ public class HttpServer {
             }
             System.out.println("URI: " + uriString);
 
+            ComponentLoader.cargarComponentes(new String[]{"edu.escuelaing.Servicio"});
 
-
-            if (uriString.startsWith("/hello?")) {
-                outputLine = getHello(uriString);
-            } else {
+            if (uriString.startsWith("/hello")) {
+                outputLine = "HTTP/1.1 200 OK\r\n"
+                + "Content-Type: application/json\r\n"
+                + "\r\n"
+                + ComponentLoader.ejecutar("/hello", uriString);
+            }else if (uriString.startsWith("/hellopost")){
+                outputLine = "HTTP/1.1 200 OK\r\n"
+                        + "Content-Type: application/json\r\n"
+                        + "\r\n"
+                        + ComponentLoader.ejecutar("/hellopost", uriString);
+            }
+            else {
                 outputLine = getIndexResponse();
             }
             out.println(outputLine);
