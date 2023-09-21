@@ -12,4 +12,15 @@ public class Servicio {
     public static String post(String arg){
         return "hola post " + arg;
     }
+
+    @RequestMapping(path = "/pojotest")
+    public static String index(String arg) {
+        return "test pojo";
+    }
+
+    @RequestMapping(path = "/reqtest")
+    public static String request(String arg) {
+        return "Request mapping test";
+    }
+
 }

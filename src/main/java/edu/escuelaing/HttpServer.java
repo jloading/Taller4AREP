@@ -70,16 +70,27 @@ public class HttpServer {
 
             ComponentLoader.cargarComponentes(new String[]{"edu.escuelaing.Servicio"});
 
-            if (uriString.startsWith("/hello")) {
+            if (uriString.startsWith("/hello?")) {
                 outputLine = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: application/json\r\n"
                 + "\r\n"
                 + ComponentLoader.ejecutar("/hello", uriString);
-            }else if (uriString.startsWith("/hellopost")){
+
+            }else if (uriString.startsWith("/hellopost?")){
                 outputLine = "HTTP/1.1 200 OK\r\n"
                         + "Content-Type: application/json\r\n"
                         + "\r\n"
                         + ComponentLoader.ejecutar("/hellopost", uriString);
+            }else if (uriString.startsWith("/pojotest")){
+                outputLine = "HTTP/1.1 200 OK\r\n"
+                        + "Content-Type: application/json\r\n"
+                        + "\r\n"
+                        + ComponentLoader.ejecutar("/pojotest", uriString);
+            }else if (uriString.startsWith("/reqtest")){
+                outputLine = "HTTP/1.1 200 OK\r\n"
+                        + "Content-Type: application/json\r\n"
+                        + "\r\n"
+                        + ComponentLoader.ejecutar("/reqtest", uriString);
             }
             else {
                 outputLine = getIndexResponse();

@@ -31,6 +31,12 @@ public class ComponentLoader {
                         System.out.println("Cargando método: " + m.getName());
                         servicios.put(ruta, m);
                     }
+                    else if(m.isAnnotationPresent(RequestMapping.class)){
+                        String ruta = m.getAnnotation(RequestMapping.class).path();
+                        System.out.println("Cargando método " + m.getName());
+                        System.out.println("En " + ruta);
+                        servicios.put(ruta, m);
+                    }
                 }
             }
         }
