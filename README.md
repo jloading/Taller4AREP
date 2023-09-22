@@ -32,10 +32,14 @@ mvn clean install
 
 Se corre el servidor con el comando
 #### Para Mac:
+```
 java -cp target/classes edu.escuelaing.HttpServer
+```
 
 #### Para Windows:
+```
 java -cp target\classes edu.escuelaing.HttpServer
+```
 
 ## Corriendo las pruebas
 
