@@ -49,10 +49,13 @@ http://localhost:35000/
 
 ## Corriendo las pruebas
 Anotaciones @GetMapping:
+
 <img width="372" alt="Captura de pantalla 2023-09-21 a la(s) 11 33 11 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/94930f91-04f1-46f3-98e2-fb2b4757faa9">
+
 <img width="382" alt="Captura de pantalla 2023-09-21 a la(s) 11 33 38 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/e11c9e64-d4f1-4562-b4b9-a6f383aa861f">
 
 Anotaciones @RequestMapping:
+
 <img width="390" alt="Captura de pantalla 2023-09-21 a la(s) 11 34 21 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/f6a7a9af-9d82-404d-b81e-182c5b974ddd">
 
 <img width="365" alt="Captura de pantalla 2023-09-21 a la(s) 11 34 52 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/32d7edd4-b95f-45d6-a625-7ef54edabb62">
