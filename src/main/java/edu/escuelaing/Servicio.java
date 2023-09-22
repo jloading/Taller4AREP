@@ -26,4 +26,10 @@ public class Servicio {
     @RequestMapping(path = "/monito.jpg")
     public static String images(String arg){return "/monito.jpg";}
 
+    @RequestMapping(path = "/cat.html")
+    public static String pages(String arg){return "/cat.html";}
+
+    @RequestMapping(path = "/app.html")
+    public static String app(String arg){return "/app.html";}
+
 }

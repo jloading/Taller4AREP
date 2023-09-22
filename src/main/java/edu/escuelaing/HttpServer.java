@@ -94,6 +94,10 @@ public class HttpServer {
                         + ComponentLoader.ejecutar("/reqtest", uriString);
             }else if (uriString.startsWith("/monito.jpg")){
                 outputLine = searchFileInPublic(uriString, responseBody, outputLine, clientSocket);
+            }else if (uriString.startsWith("/cat.html")){
+                outputLine = searchFileInPublic(uriString, responseBody, outputLine, clientSocket);
+            }else if (uriString.startsWith("/app.html")){
+                outputLine = searchFileInPublic(uriString, responseBody, outputLine, clientSocket);
             }
             else {
                 outputLine = getIndexResponse();
