@@ -41,6 +41,12 @@ java -cp target/classes edu.escuelaing.HttpServer
 java -cp target\classes edu.escuelaing.HttpServer
 ```
 
+Para finalizar, accede a la siguiente dirección desde el navegador
+
+```
+http://localhost:35000/
+```
+
 ## Corriendo las pruebas
 
 
