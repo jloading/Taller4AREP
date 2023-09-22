@@ -50,9 +50,9 @@ http://localhost:35000/
 ## Corriendo las pruebas
 Anotaciones @GetMapping:
 
-<img width="372" alt="Captura de pantalla 2023-09-21 a la(s) 11 33 11 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/94930f91-04f1-46f3-98e2-fb2b4757faa9">
-
 <img width="382" alt="Captura de pantalla 2023-09-21 a la(s) 11 33 38 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/e11c9e64-d4f1-4562-b4b9-a6f383aa861f">
+
+<img width="372" alt="Captura de pantalla 2023-09-21 a la(s) 11 33 11 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/94930f91-04f1-46f3-98e2-fb2b4757faa9">
 
 Anotaciones @RequestMapping:
 
