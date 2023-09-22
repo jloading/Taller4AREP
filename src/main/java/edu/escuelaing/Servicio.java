@@ -23,4 +23,7 @@ public class Servicio {
         return "Request mapping test";
     }
 
+    @RequestMapping(path = "/monito.jpg")
+    public static String images(String arg){return "/monito.jpg";}
+
 }

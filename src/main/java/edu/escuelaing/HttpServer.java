@@ -47,6 +47,7 @@ public class HttpServer {
                     new InputStreamReader(
                             clientSocket.getInputStream()));
             String inputLine, outputLine;
+            outputLine = "";
 
 
 
@@ -69,7 +70,7 @@ public class HttpServer {
             System.out.println("URI: " + uriString);
 
             ComponentLoader.cargarComponentes(new String[]{"edu.escuelaing.Servicio"});
-
+            String responseBody = "";
             if (uriString.startsWith("/hello?")) {
                 outputLine = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: application/json\r\n"
@@ -91,6 +92,8 @@ public class HttpServer {
                         + "Content-Type: application/json\r\n"
                         + "\r\n"
                         + ComponentLoader.ejecutar("/reqtest", uriString);
+            }else if (uriString.startsWith("/monito.jpg")){
+                outputLine = searchFileInPublic(uriString, responseBody, outputLine, clientSocket);
             }
             else {
                 outputLine = getIndexResponse();
@@ -172,8 +175,58 @@ public class HttpServer {
                 + "    </body>\n"
                 + "</html>";
         return response;
-
-
-
     }
+
+    private static String searchFileInPublic(String uriString, String responseBody, String outputLine, Socket clientSocket) throws IOException {
+        if (uriString != null && !getFile(uriString).equals("Not Found")) {
+            responseBody = getFile(uriString);
+            outputLine = getLine(responseBody);
+        } else if (uriString != null && uriString.split("\\.")[1].equals("jpg") ||
+                uriString.split("\\.")[1].equals("png")) {
+            OutputStream outputStream = clientSocket.getOutputStream();
+            File file = new File("src/main/resources/public/" + uriString);
+            BufferedImage bufferedImage = ImageIO.read(file);
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+
+            ImageIO.write(bufferedImage, uriString.split("\\.")[1], byteArrayOutputStream);
+            outputLine = getImg("");
+            dataOutputStream.writeBytes(outputLine);
+            dataOutputStream.write(byteArrayOutputStream.toByteArray());
+            System.out.println(outputLine);
+
+        }
+        return outputLine;
+    }
+
+    public static String getFile(String route) {
+        Path file = FileSystems.getDefault().getPath("src/main/resources/public", route);
+        Charset charset = Charset.forName("US-ASCII");
+        String web = new String();
+        try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                web += line + "\n";
+            }
+        } catch (IOException x) {
+            web = "Not Found";
+        }
+        return web;
+    }
+
+    public static String getLine(String responseBody) {
+        return "HTTP/1.1 200 OK \r\n"
+                + "Content-Type: text/html \r\n"
+                + "\r\n"
+                + "\n"
+                + responseBody;
+    }
+
+    private static String getImg(String responseBody) {
+        System.out.println("response Body" + responseBody);
+        return "HTTP/1.1 200 OK \r\n"
+                + "Content-Type: image/jpg \r\n"
+                + "\r\n";
+    }
+
 }
