@@ -68,12 +68,26 @@ Prueba de la aplicación funcionando con HTML:
 
 <img width="435" alt="Captura de pantalla 2023-09-21 a la(s) 11 57 18 p m" src="https://github.com/jloading/Taller4AREP/assets/65261708/694d62f0-9c8c-48be-9789-4b2c2adff7cf">
 
+Aplicación de prueba en funcionamiento:
+
+<img width="569" alt="Captura de pantalla 2023-09-22 a la(s) 12 22 46 a m" src="https://github.com/jloading/Taller4AREP/assets/65261708/e3431369-22f4-449c-ba03-0c42dd0ee836">
+
+## Qué se hizo
+Se creó una clase con los métodos necesarios para responder las solicitudes. Cada método tiene su respectiva etiqueta (@RequestMapping o @GetMapping)
+
+<img width="693" alt="Captura de pantalla 2023-09-22 a la(s) 12 27 46 a m" src="https://github.com/jloading/Taller4AREP/assets/65261708/fcb9f95f-d142-48b8-a358-caa5d4a6b56b">
+
+A su vez en la clase servidor se crearon las condiciones encargadas de llamar los métodos mencionados anteriormente dependiendo de la solicitud que se haga a través de la URI
+
+<img width="689" alt="Captura de pantalla 2023-09-22 a la(s) 12 29 52 a m" src="https://github.com/jloading/Taller4AREP/assets/65261708/ba05dc8b-e52c-425f-a8c7-0173a2b33bbe">
+
 ## Hecho con
 
-* Java
-* Git
-* Maven
-* HTML, JavaScript
+* Java: Lenguaje de programación de propósito general con enfoque a el paradigma de orientado a objetos, y con un fuerte tipado de variables.
+* Git: Es un sistema de control de versiones distribuido (VCS).
+* Maven: Es una herramienta que estandariza la configuración del ciclo de vida del proyecto.
+* HTML: Es un lenguaje de marcado que estructura una página web y su contenido.
+* JavaScript: Lenguaje de programación que los desarrolladores utilizan para hacer paginas web dinamicas.
 
 ## Autor
 
