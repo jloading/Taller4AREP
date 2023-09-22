@@ -1,19 +1,19 @@
-# TALLER 3: DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
+# TALLER 4: TALLER DE ARQUITECTURAS DE SERVIDORES DE APLICACIONES, META PROTOCOLOS DE OBJETOS, PATRON IOC, REFLEXION
 
-Servidor web diseñado para soportar funcionalidades parecidas a las de Spark.
+Programa creado para simular el microframework Spring a traves de reflexiónes que ofrece Java.
 
 ### Prerrequisitos
 
-- Java
-- Maven
-- IDE
+- Java: Es un lenguaje de programación de propósito general orientado a objetos, portátil y muy versátil.
+- Maven: Es una herramienta que maneja el ciclo de vida del programa.
+- Git: Es un sistema de control de versiones distribuido (VCS).
 
 ### Instalación
 
 1. Clonar el repositorio
 
 ```
-https://github.com/jloading/Taller3AREP
+https://github.com/jloading/Taller4AREP
 ```
 
 2. Se construye el proyecto con Maven
@@ -22,15 +22,22 @@ https://github.com/jloading/Taller3AREP
 mvn package
 ```
 
+### Corriendo la aplicación
+
+Se corren los comandos
+```
+mvn clean package install
+mvn clean install
+```
+
+Se corre el servidor con el comando
+#### Para Mac:
+java -cp target/classes edu.escuelaing.HttpServer
+
+#### Para Windows:
+java -cp target\classes edu.escuelaing.HttpServer
+
 ## Corriendo las pruebas
-
-Se acceden a los recursos especificados, en este caso son imágenes y páginas web:
-
-<img width="720" alt="Captura de pantalla 2023-08-30 a la(s) 9 02 26 p m" src="https://github.com/jloading/Taller2AREP/assets/65261708/436295ba-f81d-4e6a-a470-f6da65ac0840">
-
-<img width="716" alt="Captura de pantalla 2023-09-06 a la(s) 10 29 03 p m" src="https://github.com/jloading/Taller3AREP/assets/65261708/7c481de0-bcec-4ceb-a1a3-2d5206a9b38d">
-
-<img width="714" alt="Captura de pantalla 2023-09-06 a la(s) 10 29 29 p m" src="https://github.com/jloading/Taller3AREP/assets/65261708/326c6bd9-96a0-4add-ba27-851eaceb3a85">
 
 
 ## Hecho con
